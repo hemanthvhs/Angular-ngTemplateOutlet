@@ -1,0 +1,32 @@
+<h1>IPL Teams</h1>
+<ng-container [ngTemplateOutlet]="listTemplate"
+[ngTemplateOutletContext]="{list : teams}">
+</ng-container>
+
+<h1>IPL Players</h1>
+<ng-container [ngTemplateOutlet]="listTemplate"
+[ngTemplateOutletContext]="{list : players}">
+</ng-container>
+
+<ng-template #listTemplate let-list="list">
+  <div *ngFor="let item of list">
+    <p>{{item.name +'-'+ item.place}}</p> 
+  </div>
+</ng-template>
+
+
+<!-- <h1>IPL Teams</h1>
+<div *ngFor="let team of teams">
+  <p>{{team.name +'-'+ team.place}}</p> 
+</div>
+
+<h1>IPL Players</h1>
+<div *ngFor="let player of players">
+  <p>{{player.name +'-'+ player.place}}</p> 
+</div> -->
+
+<!-- 
+  The above commented code is the normal way of doing.
+  uncommented code is reusing the template using ng-template & ngTempalteoutlet.
+ -->
+
